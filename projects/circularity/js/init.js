@@ -7,10 +7,7 @@ var init = function (window) {
         app = window.opspark.makeApp(),
         canvas = app.canvas, 
         view = app.view,
-        fps = draw.fps('#000'),
-        
-        drawCircle,
-        circles;
+        fps = draw.fps('#000');
         
     
     window.opspark.makeGame = function() {
@@ -22,9 +19,17 @@ var init = function (window) {
         ///////////////// PROGRAM SETUP ////////////////////////////
         ////////////////////////////////////////////////////////////
         
-        
+        // TODO 1 : Declare and initialize our variables
+    var circle;
+    var circles = []
 
+        // TODO 2 : Create a function that draws a circle 
+     function drawCircle() {};   
 
+        // TODO 3 / 7 : Call the drawCircle() function 
+    for (var loopsCompleted = 0; loopsCompleted < 100; loopsCompleted++) {
+        drawCircle();
+}
         ////////////////////////////////////////////////////////////
         ///////////////// PROGRAM LOGIC ////////////////////////////
         ////////////////////////////////////////////////////////////
@@ -35,8 +40,29 @@ var init = function (window) {
         and check to see if it has drifted off the screen.         
         */
         function update() {
-            
+            // TODO 4 : Update the circle's position //
+             physikz.updatePosition[0];
+             physikz.updatePosition[1];
+             physikz.updatePosition[2];
+             physikz.updatePosition[3];
+             physikz.updatePosition[4];
+
+        
+            // TODO 5 : Call game.checkCirclePosition() on your circles.
+            game.checkCirclePosition[0];
+            game.checkCirclePosition[1];
+            game.checkCirclePosition[2];
+            game.checkCirclePosition[3];
+            game.checkCirclePosition[4];
+
            
+
+            // TODO 8 : Iterate over the array
+           for (var eachCircle = 0; eachCircle < 100; eachCircle++) {
+        circles[eachCircle] = physikz.updatePosition(circle);
+        physikz.updatePosition(eachCircle)
+        game.checkCirclePosition(eachCircle)
+}
             
         }
     
@@ -52,6 +78,19 @@ var init = function (window) {
                 circle.x = 0;
             }
             
+            // TODO 6 : YOUR CODE STARTS HERE //////////////////////
+             if ( circle.y > canvas.height ) {
+                circle.x = 0;
+            }
+            if ( circle.x < canvas.width ) {
+                circle.x = 0;
+            }
+            if ( circle.y < canvas.height ) {
+                circle.x = 0;
+            }
+
+
+            // YOUR TODO 6 CODE ENDS HERE //////////////////////////
         }
         
         /////////////////////////////////////////////////////////////
