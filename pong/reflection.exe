@@ -1,0 +1,32 @@
+Sphere bouncing of two rectangles; goal is for player to return sphere
+The sphere will be thrown from programmed side to player side
+Yes; 1. player gets max amount of points (idk if I want this, logistically probably will have to if using a point system) 
+2. When ball doesn't get served back (preferrable)
+1. if sphere doesn't get served back, then the game ends 2. If spehere hit rectangle, then it will bounce back
+ (more exist but how many will be determined by play styles)
+
+The sphere, the rectangles (which I guess would be platforms???) and the background (let's make it softpink)
+    The sphere and the rectangles will move. (I'm not sure how the position of the sphere and the opposing rectangle will be 
+    determined just yet, but I want playerRectangle {or maybe playerPadle? playerRacket?} to move with the mouse, I know
+    it's a thing. Might do arrow buttons if previous proves too difficult)
+The platforms will certainly need position checks and the ability to move but only up and down (at least), there should be
+a predetermined speed for the rectangles (??? maybe we'll see) the sphere will need to be able to move all over the screen 
+in every direction (and if we're feeling *fancy* maybe increase speed of ball with every player collision {can we change 
+the ball's color after every colision?? That'd be neat, would need a rbg rng}) Points is also something that will be added
+complicated than it needs to be (maybe keep a highscore in the corner? I don't know how to do that) So positionX, positionY
+speedX, speedY, and points
+
+I would like to be able to get playerRacket (maybe should just call it playerRectangle) to move with the mouse, otherwise
+I'll need keyUp and keyDown events to control how the rectangles move. 
+They should affect the positions of the reactangles (at least vertically) and where the sphere is headed, shouldn't
+effect the speeds
+Not gonna lie I don't really know what it's asking here. Describe like, keyboard events? Or does it mean actions that
+will happen in game? I'm gonna go with the latter.
+When the sphere is served back:
+1. It should collide with playerRacket 2. Point should be added to player 3. Should collide with player2Racket
+When the sphere is served to player:
+1. Should collide with player2Racket 2. Point should be added to player2 3. Should collide with playerRacket
+When sphere does not collide with racket
+1. Wall collision determined 2. Game will reset
+(I'm fairly certain points are determined when ball isn't served back. Could be adjusted if I care enough to look into
+pong rules)
