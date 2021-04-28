@@ -11,14 +11,11 @@ function runProgram(){
   var FRAME_RATE = 60;
   var FRAMES_PER_SECOND_INTERVAL = 1000 / FRAME_RATE;
   var KEY = {  
-     LEFT: 37,
       UP: 38,
-      RIGHT: 39,
       DOWN: 40, 
       W: 87,
-      A: 65,
       S: 83,
-      D: 68  
+      
   }   
   
   // Game Item Objects
@@ -56,10 +53,10 @@ var ball = gameItem("ball");
   function newFrame() {
     moveObject(leftPaddle);
     repositionGameItems(leftPaddle);
-    moveObject(leftPaddle);
-    repositionGameItems(leftPaddle);
-    moveObject(leftPaddle);
-    repositionGameItems(leftPaddle);
+    moveObject(rightPaddle);
+    repositionGameItems(rightPaddle);
+    moveObject(ball);
+    repositionGameItems(ball);
 
   }
   
@@ -67,57 +64,41 @@ var ball = gameItem("ball");
   Called in response to events.
   */
   function handleKeyDown(event) {
-       if (event.which === KEY.LEFT) {
-          speedX = -5;
-      } 
+     
       if (event.which === KEY.UP) {
           console.log("UP");
           leftPaddle.speedY = -5
       }
-     if (event.which === KEY.RIGHT) {
-          speedX = 5;
-      } 
+   
       if (event.which === KEY.DOWN) {
           console.log("DOWN");
           leftPaddle.speedY = 5;
       }
-       if (event.which === KEY.A) {
-          speedX = -5;
-      } 
+      
       if (event.which === KEY.W) {
           console.log("W");
           rightPaddle.speedY = -5
       }
-       if (event.which === KEY.D) {
-          speedX = 5;
-      } 
+        
       if (event.which === KEY.S) {
           console.log("S");
           rightPaddle.speedY = 5;
       }
   }
 function handleKeyUp (event){
-      if (event.which === KEY.LEFT) {
-          speedX = 0;
-      } 
+     
       if (event.which === KEY.UP) {
           leftPaddle.speedY = 0;
       }
-      if (event.which === KEY.RIGHT) {
-          speedX = 0;
-      } 
+    
       if (event.which === KEY.DOWN) {
           leftPaddle.speedY = 0;
       }
-      if (event.which === KEY.A) {
-          speedX = 0;
-      } 
+     
       if (event.which === KEY.W) {
           rightPaddle.speedY = 0;
       }
-       if (event.which === KEY.D) {
-          speedX = 0;
-      } 
+     
       if (event.which === KEY.S) {
           rightPaddle.speedY = 0;
       }
