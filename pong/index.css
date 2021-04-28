@@ -1,21 +1,68 @@
 
 body {
-  background-color: darkgreen;
+  background-color: lightgray;
 }
 
 #board {
-  width: 440px;
-  height: 440px;
+  width: 800px;
+  height: 550px;
   border: 1px solid white;
-  background-color: black;
+  background-color: lightpink;
   position: relative;
+  border-radius: 10px;
 }
 
-#gameItem {
-  background-color: teal;
-  width: 50px;
-  height: 50px;
+/*game items, yk, the things showing*/
+#leftPaddle {
+  background-color: lightgreen;
   position: absolute;
-/*   left: 100px; */  /* Uncomment if you want to set a "starting" position */
-/*   top: 100px;  */  /* Uncomment if you want to set a "starting" position */
+  width: 100px;
+  height: 120px;
+  left: 30px;
+  top: 45px;
+  border-radius: 30px;
+  left: 50px;
+  top: 100px;
+}
+
+#rightPaddle {
+  background-color: lightgreen;
+  position: absolute;
+  width: 100px;
+  height: 120px;
+  left: 123px;
+  top: 233px;
+  border-radius: 10px;
+  left: 450px;
+  top: 100px;
+}
+#ball {
+  background-color: lightgreen;
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  left: 122px;
+  top: 233px;
+  border-radius: 100px;
+  left: 250px;
+  top: 450px; 
+}
+#player1Score {
+  background-color: rgb(247, 247, 150);
+  position: absolute;
+  width: 150px;
+  height: 50px;
+  left: 0px;
+  top: 0px;
+  border-radius: 5px;
+}
+#player2Score {
+  background-color: rgb(247, 247, 150);
+  position: absolute;
+  width: 150px;
+  height: 50px;
+  left: 450px;
+  top: 0px;
+  border-radius: 5px;
+
 }
