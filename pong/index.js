@@ -33,9 +33,9 @@ function gameItem ($id){
   
 }
 //creating objects//
-var leftPaddle = gameItem("leftPaddle");
-var rightPaddle = gameItem("rightPaddle");
-var ball = gameItem("ball");
+var leftPaddle = gameItem("#leftPaddle");
+var rightPaddle = gameItem("#rightPaddle");
+var ball = gameItem("#ball");
   
 // one-time setup
   var interval = setInterval(newFrame, FRAMES_PER_SECOND_INTERVAL);   // execute newFrame every 0.0166 seconds (60 Frames per second)
@@ -109,32 +109,35 @@ function handleKeyUp (event){
   ////////////////////////////////////////////////////////////////////////////////
 
 
-function doCollide(square1, square2) {
+function doCollide(obj1, obj2) {
     // TODO: calculate and store the remaining
     // sides of the square1
-    square1.leftX = square1.x;
-    square1.topY = square1.y;
-    square1.rightX = square1.x + square1.width;
-    square1.bottomY = square1.y + square1.height; 
+    obj1.leftX = obj1.x;
+    obj1.topY = obj1.y;
+    obj1.rightX = obj1.x + obj1.width;
+    obj1.bottomY = obj1.y + obj1.height; 
     
     // TODO: Do the same for square2
-    square2.leftX = square2.x;
-    square2.topY = square2.y;
-    square2.rightX = square2.x + square2.width;
-    square2.bottomY = square2.y + square2.height
+    obj2.leftX = obj2.x;
+    obj2.topY = obj2.y;
+    obj2.rightX = obj2.x + obj2.width;
+    obj2.bottomY = obj2.y + obj2.height
   
     // TODO: Return true if they are overlapping, false otherwise
-    if (square1.leftX < square2.rightX &&
-        square1.rightX > square2.leftX && 
-        square1.topY < square2.bottomY &&
-        square1.bottomY > square2.topY) {
+    if (obj1.leftX < obj2.rightX &&
+        obj1.rightX > obj2.leftX && 
+        obj1.topY < obj2.bottomY &&
+        obj1.bottomY > obj2.topY) {
       return(true);
     }
     else {
       return(false);
     }
 }
-
+  
+// ball default speeds //
+ball.speedY = (Math.round(Math.random()) * 6) - 3;
+ball.speedX = (Math.round(Math.random()) * 6) - 3;
   function endGame() {
     // stop the interval timer
     clearInterval(interval);
@@ -152,6 +155,8 @@ function doCollide(square1, square2) {
       $(ball.id).css("top", ball.y)
       $(leftPaddle.id).css("top", leftPaddle.y)
       $(leftPaddle.id).css("top", leftPaddle.y)
+      $(rightPaddle.id).css("top", rightPaddle.y)
+      $(rightPaddle.id).css("top", rightPaddle.y)
   }
     
 }
